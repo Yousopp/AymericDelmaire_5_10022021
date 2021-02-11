@@ -1,0 +1,9 @@
+.header {
+  background-color: $color-fond;
+  &__heading {
+    @include placement(1, 1);
+  }
+  &__nav {
+    @include placement(5, 1);
+  }
+}
