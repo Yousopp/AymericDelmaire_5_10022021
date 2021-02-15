@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 .b {
   border: red solid 1px;
 }
@@ -11,14 +12,19 @@
 body {
   font-family: "Roboto", sans-serif;
   height: 100vh;
+  max-width: 1500px;
+  margin: 0 auto;
+  color: #261624;
 }
 
 h1 {
   font-size: 30px;
+  font-family: "Permanent Marker", cursive;
 }
 
 h2 {
   font-size: 18px;
+  font-family: "Permanent Marker", cursive;
 }
 
 .wrapper {
@@ -70,9 +76,53 @@ h2 {
 }
 .header a {
   text-decoration: none;
-  margin: 10px;
-  color: #8f5bfe;
+  margin: 0 10px;
+  color: #261624;
   font-weight: 700;
+  font-family: "Permanent Marker", cursive;
+}
+.header__lien-panier {
+  border: #261624 solid 2px;
+  border-radius: 50px;
+  padding: 5px;
+}
+.header__lien-panier a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+.header__lien-panier img {
+  margin-left: 5px;
+}
+
+.produit {
+  width: 700px;
+  height: 500px;
+  margin: 0 auto;
+}
+.produit h1 {
+  text-align: center;
+  padding-top: 30px;
+  height: 15%;
+}
+.produit__card {
+  height: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+.produit__card img {
+  width: 400px;
+  box-shadow: 1px 1px 10px #261624;
+}
+.produit__card__text {
+  padding: 20px;
 }
 
 .footer {
@@ -82,6 +132,9 @@ h2 {
   margin-top: 30px;
   color: white;
   box-shadow: 1px 1px 10px #261624;
+  position: relative;
+  bottom: 0;
+  font-family: "Permanent Marker", cursive;
 }
 .footer__ul {
   height: 75px;
@@ -182,7 +235,7 @@ h2 {
 .article div.card__description {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   justify-items: none;
   align-content: none;
   align-items: none;
@@ -192,6 +245,7 @@ h2 {
 }
 .article div.card h2 {
   padding: 8px 0;
+  margin: 0 auto;
 }
 .article img.produit {
   width: 200px;
@@ -206,8 +260,9 @@ h2 {
   font-weight: 700;
   text-align: center;
   text-decoration: none;
+  width: 100px;
   padding: 8px 20px;
-  margin: 10px 0;
+  margin: 10px auto;
   background-color: #8f5bfe;
   box-shadow: 5px 5px 5px #261624;
   border-radius: 50px;
@@ -228,8 +283,11 @@ h2 {
   margin: 50px 0;
 }
 .article aside hr {
-  width: 50%;
+  width: 30%;
   margin: 0 auto;
+  background-color: lightgrey;
+  height: 1px;
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */

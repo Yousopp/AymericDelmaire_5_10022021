@@ -32,13 +32,14 @@
     height: auto;
     @include flex(column, none, none, none, none);
     &__description {
-      @include flex(row, space-between, none, none, none);
+      @include flex(row, space-around, none, none, none);
       & p {
         font-weight: 1000;
       }
     }
     & h2 {
       padding: 8px 0;
+      margin: 0 auto;
     }
   }
   & img.produit {
@@ -54,8 +55,9 @@
     font-weight: 700;
     text-align: center;
     text-decoration: none;
+    width: 100px;
     padding: 8px 20px;
-    margin: 10px 0;
+    margin: 10px auto;
     background-color: $color-primary;
     box-shadow: 5px 5px 5px $color-dark;
     border-radius: 50px;
@@ -70,8 +72,11 @@
       margin: 50px 0;
     }
     & hr {
-      width: 50%;
+      width: 30%;
       margin: 0 auto;
+      background-color: lightgrey;
+      height: 1px;
+      border: none;
     }
   }
 }
