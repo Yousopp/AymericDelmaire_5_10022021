@@ -1,6 +1,7 @@
 .header {
   background-color: $color-fond;
   padding: 0 20px;
+  box-shadow: 1px 1px 10px $color-dark;
   &__heading {
     height: 75px;
     @include placement(2, 1);
@@ -17,27 +18,35 @@
   & a {
     text-decoration: none;
     margin: 10px;
+    color: $color-primary;
+    font-weight: 700;
   }
 }
 
 .footer {
-  background-color: $color-fond;
+  background-color: $color-dark;
   padding: 0 20px;
   font-size: 14px;
+  margin-top: 30px;
+  color: white;
+  box-shadow: 1px 1px 10px $color-dark;
   &__ul {
-    height: 50px;
+    height: 75px;
     list-style-type: none;
     @include placement(5, 1);
     @include flex(row, space-around, none, none, center);
+    & li {
+      padding: 0 20px;
+    }
   }
   &__text-left {
-    height: 50px;
+    height: 75px;
     width: 175px;
     @include flex(row, space-around, none, none, center);
     @include placement(2, 1);
   }
   &__text-right {
-    height: 50px;
+    height: 75px;
     width: 175px;
     @include flex(row, center, none, none, center);
     @include placement(8, 1);
@@ -45,5 +54,6 @@
   & ul li a {
     text-decoration: none;
     margin: 0 10px;
+    color: white;
   }
 }

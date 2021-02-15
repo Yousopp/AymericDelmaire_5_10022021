@@ -1,50 +1,74 @@
 .article {
   padding: 0 20px;
-  &__heading {
-    @include placement(2, 1);
-    @include flex(row, center, none, none, center);
+  & h1 {
+    padding: 10px 0;
   }
   & section {
     @include flex(column, center, center, center, center);
   }
-  &--place-1 {
-    @include placement(1, 1);
+  &--place-heading {
+    grid-column: 1 / 4;
+    grid-row: 1;
   }
-  &--place-2 {
+  &--place-info {
     @include placement(3, 1);
   }
-  &--place-3 {
+  &--place-1 {
     @include placement(1, 2);
   }
-  &--place-4 {
+  &--place-2 {
     @include placement(2, 2);
   }
-  &--place-5 {
+  &--place-3 {
     @include placement(3, 2);
   }
-  & div {
-    height: auto;
-    width: 199px;
-    border: solid 3px $color-primary;
-    @include flex(column, center, center, center, center);
-    box-shadow: 10px 10px 10px $color-primary-light;
+  &--place-4 {
+    @include placement(1, 3);
   }
-  & img {
+  &--place-5 {
+    @include placement(2, 3);
+  }
+  & div.card {
+    height: auto;
+    @include flex(column, none, none, none, none);
+    &__description {
+      @include flex(row, space-between, none, none, none);
+      & p {
+        font-weight: 1000;
+      }
+    }
+    & h2 {
+      padding: 8px 0;
+    }
+  }
+  & img.produit {
     width: 200px;
     height: 130px;
+    box-shadow: 1px 1px 8px $color-dark;
+  }
+  & img.rating-star {
+    width: 75px;
   }
   & a {
-    color: $color-primary;
-    width: 100%;
+    color: white;
+    font-weight: 700;
     text-align: center;
     text-decoration: none;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-top: solid 3px $color-primary;
+    padding: 8px 20px;
+    margin: 10px 0;
+    background-color: $color-primary;
+    box-shadow: 5px 5px 5px $color-dark;
+    border-radius: 50px;
   }
   & aside {
+    @include flex(column, center, none, space-between, none);
     padding: 20px;
-    @include placement(4, 1);
+    height: auto;
+    grid-column: 4;
+    grid-row: 1 / 4;
+    & p {
+      margin: 50px 0;
+    }
     & hr {
       width: 50%;
       margin: 0 auto;
