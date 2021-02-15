@@ -1,0 +1,53 @@
+.article {
+  padding: 0 20px;
+  &__heading {
+    @include placement(2, 1);
+    @include flex(row, center, none, none, center);
+  }
+  & section {
+    @include flex(column, center, center, center, center);
+  }
+  &--place-1 {
+    @include placement(1, 1);
+  }
+  &--place-2 {
+    @include placement(3, 1);
+  }
+  &--place-3 {
+    @include placement(1, 2);
+  }
+  &--place-4 {
+    @include placement(2, 2);
+  }
+  &--place-5 {
+    @include placement(3, 2);
+  }
+  & div {
+    height: auto;
+    width: 199px;
+    border: solid 3px $color-primary;
+    @include flex(column, center, center, center, center);
+    box-shadow: 10px 10px 10px $color-primary-light;
+  }
+  & img {
+    width: 200px;
+    height: 130px;
+  }
+  & a {
+    color: $color-primary;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-top: solid 3px $color-primary;
+  }
+  & aside {
+    padding: 20px;
+    @include placement(4, 1);
+    & hr {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+}

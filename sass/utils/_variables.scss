@@ -1,18 +1,24 @@
 $color-primary: #8f5bfe;
+$color-primary-light: #c8afff;
 $color-second: #e78b05;
 
 $color-fond: #f3e9f1;
 $color-dark: #261624;
 
-.wrapper {
-  display: grid;
-  &__header {
-    grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: 100px;
-  }
+.b {
+  border: red solid 1px;
 }
 
 @mixin placement($column, $row) {
   grid-column: $column;
   grid-row: $row;
+}
+
+@mixin flex($direction, $just, $just-items, $align, $align-items) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $just;
+  justify-items: $just-items;
+  align-content: $align;
+  align-items: $align-items;
 }
