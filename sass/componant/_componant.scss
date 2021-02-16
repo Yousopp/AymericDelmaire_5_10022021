@@ -23,36 +23,69 @@
     font-family: "Permanent Marker", cursive;
   }
   &__lien-panier {
-    border: $color-dark solid 2px;
+    border: $color-primary solid 2px;
     border-radius: 50px;
     padding: 5px;
     & a {
       @include flex(row, space-around, center, center, center);
+      color: $color-primary;
+      font-weight: 700;
     }
     & img {
-      margin-left: 5px;
+      margin-left: 10px;
     }
   }
 }
 
 .produit {
   width: 700px;
-  height: 500px;
+  height: 502px;
   margin: 0 auto;
   & h1 {
     text-align: center;
-    padding-top: 30px;
-    height: 15%;
+    padding-top: 50px;
+    height: 10%;
   }
   &__card {
     height: 85%;
     @include flex(row, center, center, center, center);
-    & img {
+    & img.ours {
       width: 400px;
       box-shadow: 1px 1px 10px $color-dark;
     }
     &__text {
       padding: 20px;
+      text-align: center;
+    }
+    & h2 {
+      font-size: 30px;
+    }
+    &__color {
+      padding: 5px;
+      @include flex(row, center, center, none, center);
+      & input {
+        margin: 0 10px;
+      }
+    }
+    &__panier {
+      font-size: 20px;
+      font-weight: 700;
+      border: solid $color-primary 2px;
+      border-radius: 50px;
+      padding: 5px;
+      font-family: "Permanent Marker", cursive;
+      width: 120px;
+      margin: 0 auto;
+      @include flex(row, center, center, center, center);
+      & p {
+        margin-right: 10px;
+      }
+      & a {
+        color: $color-primary;
+        display: flex;
+        text-decoration: none;
+        list-style-type: none;
+      }
     }
   }
 }

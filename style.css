@@ -82,7 +82,7 @@ h2 {
   font-family: "Permanent Marker", cursive;
 }
 .header__lien-panier {
-  border: #261624 solid 2px;
+  border: #7434ff solid 2px;
   border-radius: 50px;
   padding: 5px;
 }
@@ -93,20 +93,22 @@ h2 {
   justify-items: center;
   align-content: center;
   align-items: center;
+  color: #7434ff;
+  font-weight: 700;
 }
 .header__lien-panier img {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .produit {
   width: 700px;
-  height: 500px;
+  height: 502px;
   margin: 0 auto;
 }
 .produit h1 {
   text-align: center;
-  padding-top: 30px;
-  height: 15%;
+  padding-top: 50px;
+  height: 10%;
 }
 .produit__card {
   height: 85%;
@@ -117,12 +119,53 @@ h2 {
   align-content: center;
   align-items: center;
 }
-.produit__card img {
+.produit__card img.ours {
   width: 400px;
   box-shadow: 1px 1px 10px #261624;
 }
 .produit__card__text {
   padding: 20px;
+  text-align: center;
+}
+.produit__card h2 {
+  font-size: 30px;
+}
+.produit__card__color {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  align-content: none;
+  align-items: center;
+}
+.produit__card__color input {
+  margin: 0 10px;
+}
+.produit__card__panier {
+  font-size: 20px;
+  font-weight: 700;
+  border: solid #7434ff 2px;
+  border-radius: 50px;
+  padding: 5px;
+  font-family: "Permanent Marker", cursive;
+  width: 120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+.produit__card__panier p {
+  margin-right: 10px;
+}
+.produit__card__panier a {
+  color: #7434ff;
+  display: flex;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .footer {
@@ -263,7 +306,7 @@ h2 {
   width: 100px;
   padding: 8px 20px;
   margin: 10px auto;
-  background-color: #8f5bfe;
+  background-color: #7434ff;
   box-shadow: 5px 5px 5px #261624;
   border-radius: 50px;
 }
