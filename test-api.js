@@ -13,21 +13,22 @@ fetch('http://localhost:3000/api/teddies')/*Méthode Fetch pour aller chercher l
             document.createElement("section")/*Création d'un élément section*/
             const section = document.createElement("section")/*Mettre cette élément dans une variable section*/
             /*Créer du HTML dans la section, création des cartes pour les nounours*/
-            section.innerHTML = `
-            <div class="card">
-                <img class='produit' src='${element.imageUrl}' alt='Photo d'un ours en peluche' title='Ours en peluche ${element.name}'/>
-                <h2>${element.name}</h2>
-                <div class="card__description">
-                    <img
-                    class="rating-star"
-                    src="/images/rating_5.png"
-                    alt="Note 5 étoiles sur 5"
-                    />
-                    <p>${element.price / 100} €</p>
+            section.innerHTML = 
+            `
+                <div class="card">
+                    <img class='produit' src='${element.imageUrl}' alt='Photo d'un ours en peluche' title='Ours en peluche ${element.name}'/>
+                    <h2>${element.name}</h2>
+                    <div class="card__description">
+                        <img
+                        class="rating-star"
+                        src="/images/rating_5.png"
+                        alt="Note 5 étoiles sur 5"
+                        />
+                        <p>${element.price / 100} €</p>
+                    </div>
+                    <a href="/view/menu/produit.html">Commander</a>
                 </div>
-                <a href="/view/menu/produit.html">Commander</a>
-            </div>
-                `
+            `
             container.append(section)/*Permet d'insérer un ensemble d'objets dans la variable section*/
         });
     })
