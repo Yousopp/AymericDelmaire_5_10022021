@@ -8,12 +8,12 @@ const container = document.getElementById('container-article')/*Créer une varia
 
 fetch('http://localhost:3000/api/teddies')/*Méthode Fetch pour aller chercher l'URL de l'API*/
     .then(res => {
-        if(res.ok){
+        if(res.ok){/*Si l'URL est OK (true) alors faire...*/
             res.json().then(data => {/*Convertion des données en JSON pour les utiliser*/
             data.forEach(element => {
                 document.createElement("section")/*Création d'un élément section*/
-                const section = document.createElement("section")
-                section.innerHTML = 
+                const section = document.createElement("section")/*Création d'une variable section pour stocker notre élément section*/
+                section.innerHTML = /*Création d'un objet en HTML, ici la carte*/
                 `
                     <div class="card">
                         <img class='produit' src='${element.imageUrl}' alt='Photo d'un ours en peluche' title='Ours en peluche ${element.name}'/>
@@ -32,8 +32,11 @@ fetch('http://localhost:3000/api/teddies')/*Méthode Fetch pour aller chercher l
             container.append(section)/*Permet d'insérer un ensemble d'objets dans la variable section*/
             })
         })
-        } else {
+        } else {/*Sinon afficher message d'erreur*/
             console.log("ERROR")
             document.getElementById('erreur').innerHTML = "<strong>Erreur de chargement</strong>"
         }
     })
+
+/****************************************************/
+
