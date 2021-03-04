@@ -26,7 +26,7 @@ fetch('http://localhost:3000/api/teddies')/*Méthode Fetch pour aller chercher l
                             />
                             <p>${element.price / 100} €</p>
                         </div>
-                        <a href="/view/menu/produit.html">Commander</a>
+                        <a href="/view/menu/produit.html?id=${element._id}">Détail du produit</a>
                     </div>
                 `
             container.append(section)/*Permet d'insérer un ensemble d'objets dans la variable section*/

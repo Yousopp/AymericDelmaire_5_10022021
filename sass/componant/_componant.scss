@@ -69,12 +69,12 @@
     }
     &__panier {
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 500;
       border: solid $color-primary 2px;
       border-radius: 50px;
       padding: 5px;
       font-family: "Permanent Marker", cursive;
-      width: 120px;
+      width: 175px;
       margin: 0 auto;
       @include flex(row, center, center, center, center);
       & p {
@@ -87,6 +87,21 @@
         list-style-type: none;
       }
     }
+  }
+}
+
+.panier {
+  margin: 30px auto;
+  & p {
+    text-align: center;
+  }
+  & table {
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  & td {
+    border: 1px solid black;
+    padding: 5px 10px;
   }
 }
 
