@@ -107,11 +107,11 @@ h2 {
 }
 .produit h1 {
   text-align: center;
-  padding-top: 50px;
+  padding: 40px 0;
   height: 10%;
 }
 .produit__card {
-  height: 85%;
+  height: 80%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -150,7 +150,12 @@ h2 {
   padding: 5px;
   font-family: "Permanent Marker", cursive;
   width: 175px;
-  margin: 0 auto;
+  position: absolute;
+  bottom: 125px;
+  left: 45%;
+  color: #7434ff;
+  background-color: white;
+  outline-style: none;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -170,6 +175,7 @@ h2 {
 
 .panier {
   margin: 30px auto;
+  height: 69%;
 }
 .panier p {
   text-align: center;

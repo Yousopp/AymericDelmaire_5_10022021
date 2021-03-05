@@ -6,15 +6,16 @@ const produit = document.getElementById('container-produit')
 fetch(`http://localhost:3000/api/teddies/${id}`)
 .then(res => {
     if (res.ok){
-        res.json().then(data => { 
-
-                /*Ajout d'un objet dans le localStorage*/
-                var item = data
-                console.log(item)
-                let objet = JSON.stringify(item);
-                localStorage.setItem("obj",objet);
-                /***************************************/
-                
+        res.json().then(data => {
+            /*Ajout d'un objet dans le localStorage au clic du button*/
+            let elt = document.querySelector('button')
+                elt.onclick = function(){
+                    alert('Votre article à bien été ajouté au panier !')
+                    var item = data
+                    console.log(item)
+                    let objet = JSON.stringify(item);
+                    localStorage.setItem("obj",objet);
+                }
             let colors = ""
             data.colors.forEach(element => {
                 console.log(element)
@@ -41,17 +42,6 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
                             </div>
                             <br>
                             <p>Prix : <strong>${data.price / 100} €</strong></p>
-                            <br>
-                            <div class="produit__card__panier">
-                                <a href="#">
-                                <p>Ajouter au </p>
-                                <img
-                                src="/images/market.svg"
-                                alt="Caddie représentant le panier"
-                                width="25"
-                                />
-                                </a>
-                            </div>
                         </div>
                     </div>
                 `

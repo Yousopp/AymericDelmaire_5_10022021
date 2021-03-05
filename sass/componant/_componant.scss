@@ -43,11 +43,11 @@
   margin: 0 auto;
   & h1 {
     text-align: center;
-    padding-top: 50px;
+    padding: 40px 0;
     height: 10%;
   }
   &__card {
-    height: 85%;
+    height: 80%;
     @include flex(row, center, center, center, center);
     & img.ours {
       width: 400px;
@@ -75,7 +75,12 @@
       padding: 5px;
       font-family: "Permanent Marker", cursive;
       width: 175px;
-      margin: 0 auto;
+      position: absolute;
+      bottom: 125px;
+      left: 45%;
+      color: $color-primary;
+      background-color: white;
+      outline-style: none;
       @include flex(row, center, center, center, center);
       & p {
         margin-right: 10px;
@@ -92,6 +97,7 @@
 
 .panier {
   margin: 30px auto;
+  height: 69%;
   & p {
     text-align: center;
   }
