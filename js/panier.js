@@ -8,7 +8,7 @@ document.getElementById('test').innerHTML =
             <td>${objJson.name}</td>
             <td>${objJson._id}</td>
             <td>1</td>
-            <td>${objJson.price / 100}</td>
+            <td>${objJson.price / 100} €</td>
             <td>&#x274C;</td>
         </tr>
     `

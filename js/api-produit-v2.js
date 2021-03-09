@@ -35,7 +35,7 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
                             <p>${data.description}</p>
                             <br>
                             <div class="produit__card__color">
-                                <label for="head">Choisis la couleur :</label>
+                                <label for="head">Couleur :</label>
                                 <select name="color" id="color-select">
                                 `+colors+`
                                 </select>

@@ -2,6 +2,7 @@
   padding: 0 20px;
   & h1 {
     padding: 10px 0;
+    margin-top: 50px;
   }
   & section {
     @include flex(column, center, center, center, center);
@@ -51,16 +52,25 @@
     width: 75px;
   }
   & a {
-    color: white;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-    width: 150px;
-    padding: 8px 20px;
-    margin: 10px auto;
-    background-color: $color-primary;
-    box-shadow: 5px 5px 5px $color-dark;
+    font-size: 18px;
+    font-weight: 500;
+    border: solid $color-primary 2px;
     border-radius: 50px;
+    padding: 5px 10px;
+    font-family: "Permanent Marker", cursive;
+    color: $color-primary;
+    background-color: white;
+    outline-style: none;
+    text-decoration: none;
+    @include flex(row, center, center, center, center);
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 5px 5px 5px $color-shadow;
+    margin: 10px 0;
+    &:hover {
+      color: white;
+      background-color: $color-primary;
+    }
   }
   & aside {
     @include flex(column, center, none, space-between, none);
