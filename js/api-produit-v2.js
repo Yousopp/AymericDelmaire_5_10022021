@@ -7,7 +7,6 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
 .then(res => {
     if (res.ok){
         res.json().then(data => {
-            /*Ajout d'un objet dans le localStorage au clic du button*/
             let elt = document.querySelector('button')
                 elt.onclick = function(){
                     alert('Votre article a bien été ajouté au panier !')

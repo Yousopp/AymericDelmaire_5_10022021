@@ -1,5 +1,4 @@
 let objet = localStorage.getItem("obj")
-console.log(objet)
 let objJson = JSON.parse(objet)
 console.log(objJson)
 
