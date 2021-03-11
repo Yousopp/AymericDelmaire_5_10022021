@@ -78,6 +78,11 @@
     height: auto;
     grid-column: 4;
     grid-row: 1 / 4;
+    @include lg {
+      grid-column: 1 / 4;
+      grid-row: 4;
+      @include flex(column, none, flex-start, none, none);
+    }
     & p {
       margin: 50px 0;
     }

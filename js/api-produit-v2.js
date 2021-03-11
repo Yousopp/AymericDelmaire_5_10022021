@@ -10,15 +10,23 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
             /*Ajout d'un objet dans le localStorage au clic du button*/
             let elt = document.querySelector('button')
                 elt.onclick = function(){
-                    alert('Votre article à bien été ajouté au panier !')
-                    var item = data
-                    console.log(item)
-                    let objet = JSON.stringify(item);
-                    localStorage.setItem("obj",objet);
+                    alert('Votre article a bien été ajouté au panier !')
+                    let itemCart = localStorage.getItem("obj")
+                    let cart = JSON.parse(itemCart)
+                    let objet = null
+                    if(cart === null) {
+                        data.quantity = 1
+                        objet = JSON.stringify({[data._id]:data})
+                        console.log(objet)
+                    } else {
+                        cart.push(data)
+                        cart[data._id]
+                        objet = JSON.stringify(cart)
+                    }
+                    localStorage.setItem("obj",objet)
                 }
             let colors = ""
             data.colors.forEach(element => {
-                console.log(element)
                 colors += `<option value="${element}">${element}</option>`                  
             });
                 document.createElement("div")

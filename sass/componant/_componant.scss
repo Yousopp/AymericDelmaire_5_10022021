@@ -88,6 +88,7 @@
       outline-style: none;
       @include flex(row, center, center, center, center);
       cursor: pointer;
+      box-shadow: 5px 5px 5px $color-shadow;
       transition: 0.3s;
       & svg {
         fill: $color-primary;
@@ -142,6 +143,7 @@
     @include flex(row, center, center, center, center);
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 5px 5px 5px $color-shadow;
     &:hover {
       background-color: $color-primary;
       color: white;
