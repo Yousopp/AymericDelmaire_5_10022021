@@ -161,6 +161,10 @@
   position: relative;
   bottom: 0;
   font-family: "Permanent Marker", cursive;
+  
+  @include md {
+    @include flex(column, center, center, center, center);
+  }
   &__ul {
     height: 75px;
     list-style-type: none;

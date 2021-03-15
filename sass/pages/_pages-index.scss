@@ -7,27 +7,27 @@
   & section {
     @include flex(column, center, center, center, center);
   }
+  &__paragraphe {
+    @include flex(row, none, none, none, none);
+    & p {
+      margin: 0 10px;
+
+      @include md {
+        margin: 5px 0;
+      }
+    }
+
+    @include md {
+      @include flex(column, center, center, center, center);
+    }
+  }
   &--place-heading {
     grid-column: 1 / 4;
     grid-row: 1;
-  }
-  &--place-info {
-    @include placement(3, 1);
-  }
-  &--place-1 {
-    @include placement(1, 2);
-  }
-  &--place-2 {
-    @include placement(2, 2);
-  }
-  &--place-3 {
-    @include placement(3, 2);
-  }
-  &--place-4 {
-    @include placement(1, 3);
-  }
-  &--place-5 {
-    @include placement(2, 3);
+
+    @include md {
+      grid-column: 1 / 3;
+    }
   }
   & div.card {
     height: auto;
@@ -79,8 +79,8 @@
     grid-column: 4;
     grid-row: 1 / 4;
     @include lg {
-      grid-column: 1 / 4;
-      grid-row: 4;
+      grid-column: 1 / 3;
+      grid-row: 5;
       @include flex(column, none, flex-start, none, none);
     }
     & p {
