@@ -6,14 +6,28 @@
     height: 75px;
     @include placement(2, 1);
     @include flex(row, center, none, none, center);
+
+    @include sm {
+      @include placement(5, 1);
+      margin: 0 auto;
+    }
   }
   &__nav {
     @include placement(8, 1);
+
+    @include sm {
+      grid-column: 1 / 9;
+      grid-row: 2;
+    }
   }
   &__ul {
     height: 75px;
     list-style-type: none;
     @include flex(row, center, none, none, center);
+
+    @include sm {
+      @include flex(row, space-around, none, none, center);
+    }
   }
   & a {
     text-decoration: none;
@@ -39,28 +53,36 @@
 }
 
 .produit {
-  width: 700px;
-  height: 502px;
   margin: 0 auto;
+  height: 75%;
   & h1 {
     text-align: center;
+    color: $color-primary;
     padding: 40px 0;
-    height: 10%;
   }
   &__card {
-    height: 80%;
-    width: 700px;
+    margin: auto;
     @include flex(row, center, center, center, center);
+
+    @include md {
+      @include flex(column, center, center, center, center);
+    }
     & img.ours {
-      width: 400px;
+      width: 300px;
+      margin: 10px;
       box-shadow: 1px 1px 10px $color-dark;
+
+      @include sm {
+        width: 250px;
+      }
     }
     & select {
       padding: 5px;
       margin-left: 10px;
     }
     &__text {
-      padding: 20px;
+      width: 300px;
+      padding: 10px;
       text-align: center;
     }
     & h2 {
@@ -74,15 +96,15 @@
       }
     }
     &__panier {
+      margin: 10px auto;
+      @include placement(1, 5);
       font-size: 20px;
       font-weight: 500;
+      width: 200px;
       border: solid $color-primary 2px;
       border-radius: 50px;
       padding: 5px 15px;
       font-family: "Permanent Marker", cursive;
-      position: absolute;
-      left: 45%;
-      bottom: 125px;
       color: $color-primary;
       background-color: white;
       outline-style: none;
@@ -116,7 +138,7 @@
 
 .panier {
   margin: 30px auto;
-  height: 69%;
+  height: 69.1%;
   & p {
     text-align: center;
   }
@@ -158,8 +180,6 @@
   margin-top: 30px;
   color: white;
   box-shadow: 1px 1px 10px $color-dark;
-  position: relative;
-  bottom: 0;
   font-family: "Permanent Marker", cursive;
   
   @include md {

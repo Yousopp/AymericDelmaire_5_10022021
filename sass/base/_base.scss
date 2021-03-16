@@ -6,12 +6,18 @@
   padding: 0;
 }
 
+body, html {
+  height: 100%;
+}
+
 body {
   font-family: "Roboto", sans-serif;
-  height: 100vh;
   max-width: 1500px;
-  margin: 0 auto;
   color: $color-dark;
+}
+
+#no-absolute {
+  position: relative;
 }
 
 h1 {
@@ -42,6 +48,14 @@ h2 {
     @media (max-width: 768px){
       grid-template-columns: repeat(2, 1fr);
     }
+
+    @media (max-width: 576px){
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  &__produit {
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: auto;
   }
   &__footer {
     grid-template-columns: repeat(9, 1fr);

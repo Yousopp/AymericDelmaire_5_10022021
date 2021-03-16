@@ -10,6 +10,10 @@ $color-shadow: #686868;
   border: red solid 1px;
 }
 
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
 @mixin placement($column, $row) {
   grid-column: $column;
   grid-row: $row;

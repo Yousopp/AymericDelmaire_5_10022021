@@ -10,7 +10,7 @@ for(var obj in objJson) {
     `
         <tr>
             <td>${objJson[obj].name}</td>
-            <td>${objJson[obj]._id}</td>
+            <td>${objJson[obj]._id}</div></td>
             <td>${objJson[obj].quantity}</td>
             <td>${objJson[obj].price / 100} €</td>
             <td>&#x274C;</td>
