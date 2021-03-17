@@ -3,10 +3,19 @@ let objet = localStorage.getItem("obj")
 let objJson = JSON.parse(objet)
 /* transformer la chaîne Json en objet dans var "objJson*/
 
+let table = 
+`
+<tr>
+    <td><strong>NAME</strong></td>
+    <td><strong>ID</strong></td>
+    <td><strong>QUANTITE</strong></td>
+    <td><strong>PRIX</strong></td>
+</tr>
+`
+
 for(var obj in objJson) {
-/* pour chaque "objJson" dans var "obj" faire.. */    
-    document.getElementById('test').innerHTML =
-    /* insérer du HTML dans l'element avec l'ID "test" */
+/* pour chaque "objJson" dans var "obj" faire.. */
+    table +=
     `
         <tr>
             <td>${objJson[obj].name}</td>
@@ -17,3 +26,16 @@ for(var obj in objJson) {
         </tr>
     `
 }
+
+table += 
+`
+<tr>
+    <td></td>
+    <td></td>
+    <td><strong>Total</strong></td>
+    <td><strong>###</strong></td>
+</tr>
+`
+
+document.getElementById('table').innerHTML = table
+/* insérer du HTML dans l'element avec l'ID "test" */

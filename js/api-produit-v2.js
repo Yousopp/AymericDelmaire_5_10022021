@@ -1,19 +1,19 @@
 let params = (new URL(document.location)).searchParams
-/* creation des URLs des objets */
+/* recuperation des URLs des objets */
 let id = params.get("id")
 /* recuperation du parametre ID dans une variable */
 const produit = document.getElementById('container-produit')
-/* Recuperation de l'element "container-produit" dans une variable */
+/* Recuperation de l'element HTML "container-produit" dans une variable */
 
 fetch(`http://localhost:3000/api/teddies/${id}`)
-/* appel de l'API avec la methode FETCH avec à la fin la variable ID */
+/* appel de l'API avec la methode FETCH avec le parametre ID */
 .then(res => {
     if (res.ok){
     /* si resultat OK faire.. */
         res.json().then(data => {
         /* transformer la RES en objet Json */
             let elt = document.querySelector("button")
-            /* appel de l'élément BUTTON dans la variable elt */
+            /* stocker l'élément BUTTON dans la variable elt */
                 elt.onclick = function (){
                 /* quand "elt" est cliqué, lancer la function.. */
                     alert('Votre article a bien été ajouté au panier !')
@@ -21,22 +21,24 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
                     let itemCart = localStorage.getItem("obj")
                     /* ajout de l'item du localStorage "obj" dans une variable "itemCart" */
                     let cart = JSON.parse(itemCart)
-                    /* transformation de "itemCart" en objet et mis dans une variable/tableau "cart" */
+                    /* transformation de "itemCart" en objet Json et mis dans une variable "cart" */
                     let objet = null
                     /* initialiser la var "objet" avec la valeur null */
                     if(cart === null) {
                     /* si "cart" est null alors faire.. */
                         data.quantity = 1
-                        /* ajoute une entrée "quantity" à "data" et égal à 1 */
+                        /* ajoute une entrée "quantity" à "data" et egal à 1 */
                         objet = JSON.stringify({[data._id]:data})
-                        /* convertit une valeur JavaScript en une chaîne JSON */
+                        /* convertit une valeur JavaScript en une chaîne de caractere */
                         console.log(objet)
                     } else {
                     /* sinon faire.. */
-                        cart.push(data)
-                        /* ajouter la var "data" dans le panier "cart" */
-                        cart[data._id]
-                        data.quantity ++
+                        if(cart[data._id]) {
+                            cart[data._id].quantity++
+                        } else {
+                            data.quantity = 1
+                            cart[data._id] = data
+                        }
                         objet = JSON.stringify(cart)
                     }
                     localStorage.setItem("obj",objet)
