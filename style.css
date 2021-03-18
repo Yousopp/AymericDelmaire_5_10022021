@@ -154,8 +154,13 @@ h2 {
 }
 
 .produit {
-  margin: 0 auto;
-  height: 75%;
+  margin: 0 auto 30px auto;
+  height: calc(100vh - 180px);
+}
+@media (max-width: 768px) {
+  .produit {
+    height: 100vh;
+  }
 }
 .produit h1 {
   text-align: center;
@@ -306,7 +311,6 @@ h2 {
   background-color: #261624;
   padding: 0 20px;
   font-size: 14px;
-  margin-top: 30px;
   color: white;
   box-shadow: 1px 1px 10px #261624;
   font-family: "Permanent Marker", cursive;
@@ -368,6 +372,7 @@ h2 {
 
 .article {
   padding: 0 20px;
+  margin: 20px 0;
 }
 .article h1 {
   padding: 10px 0;

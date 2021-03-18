@@ -53,8 +53,12 @@
 }
 
 .produit {
-  margin: 0 auto;
-  height: 75%;
+  margin: 0 auto 30px auto;
+  height: calc(100vh - 180px);
+
+  @include md {
+    height: 100vh;
+  }
   & h1 {
     text-align: center;
     color: $color-primary;
@@ -177,11 +181,10 @@
   background-color: $color-dark;
   padding: 0 20px;
   font-size: 14px;
-  margin-top: 30px;
   color: white;
   box-shadow: 1px 1px 10px $color-dark;
   font-family: "Permanent Marker", cursive;
-  
+
   @include md {
     @include flex(column, center, center, center, center);
   }

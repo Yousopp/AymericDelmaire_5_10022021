@@ -12,7 +12,6 @@ let table =
     <td><strong>PRIX</strong></td>
 </tr>
 `
-
 for(var obj in objJson) {
 /* pour chaque "objJson" dans var "obj" faire.. */
     table +=
@@ -22,11 +21,10 @@ for(var obj in objJson) {
             <td>${objJson[obj]._id}</div></td>
             <td>${objJson[obj].quantity}</td>
             <td>${objJson[obj].price / 100} €</td>
-            <td>&#x274C;</td>
+            <td><button id="ctaDelete">&#x274C;</button></td>
         </tr>
     `
 }
-
 table += 
 `
 <tr>
@@ -38,4 +36,13 @@ table +=
 `
 
 document.getElementById('table').innerHTML = table
-/* insérer du HTML dans l'element avec l'ID "test" */
+/* insérer du HTML dans l'element avec l'ID "table" */
+
+let elt = document.getElementById("ctaDelete")
+elt.onclick = function(){
+    delete table
+    delete objJson
+    localStorage.removeItem("ojb")
+    localStorage.clear()
+    location.reload()
+}
