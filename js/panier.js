@@ -40,9 +40,6 @@ document.getElementById('table').innerHTML = table
 
 let elt = document.getElementById("ctaDelete")
 elt.onclick = function(){
-    delete table
-    delete objJson
-    localStorage.removeItem("ojb")
-    localStorage.clear()
+    alert("Votre produit à bien été retiré du panier !")
     location.reload()
 }

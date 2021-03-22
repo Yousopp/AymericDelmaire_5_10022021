@@ -35,13 +35,16 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
                     /* sinon faire.. */
                         if(cart[data._id]) {
                             cart[data._id].quantity++
+                            cart[data._id].price = cart[data._id].quantity * data.price
                         } else {
                             data.quantity = 1
                             cart[data._id] = data
                         }
                         objet = JSON.stringify(cart)
+                        console.log(objet)
                     }
                     localStorage.setItem("obj",objet)
+                    console.log(localStorage)
                 }
             let colors = ""
             data.colors.forEach(element => {
