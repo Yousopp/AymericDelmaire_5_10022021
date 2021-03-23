@@ -34,21 +34,23 @@ table +=
     <td><strong>###</strong></td>
 </tr>
 `
-
 document.getElementById('table').innerHTML = table
 /* insérer du HTML dans l'element avec l'ID "table" */
 
+
 let deleteById = (objJson, idToRemove) => {
-    for(let key in objJson){
-        let {id} = objJson[key] | {}
+    idToRemove = "5beaa8bf1c9d440000a57d94"
+    for(let obj in objJson){
+        let {id} = objJson[obj] | {}
         if(id === "5beaa8bf1c9d440000a57d94"){
-            delete objJson[key]
+            delete objJson[obj]
         }
     }
 }
 
 let elt = document.getElementById("ctaDelete")
 elt.onclick = function(){
+    deleteById()
     alert("Votre produit à bien été retiré du panier !")
     location.reload()
 }
