@@ -142,7 +142,7 @@
 
 .panier {
   margin: 30px auto;
-  height: 69.1%;
+  height: 100%;
   & p {
     text-align: center;
   }
@@ -173,6 +173,18 @@
     &:hover {
       background-color: $color-primary;
       color: white;
+    }
+  }
+  & form {
+    width: 400px;
+    margin: 40px auto;
+    & fieldset {
+      @include flex(column, space-between, none, center, none);
+      padding: 10px;
+      & input {
+        margin-bottom: 5px;
+        padding: 5px;
+      }
     }
   }
 }

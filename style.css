@@ -267,7 +267,7 @@ h2 {
 
 .panier {
   margin: 30px auto;
-  height: 69.1%;
+  height: 100%;
 }
 .panier p {
   text-align: center;
@@ -305,6 +305,23 @@ h2 {
 .panier button:hover {
   background-color: #7434ff;
   color: white;
+}
+.panier form {
+  width: 400px;
+  margin: 40px auto;
+}
+.panier form fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-items: none;
+  align-content: center;
+  align-items: none;
+  padding: 10px;
+}
+.panier form fieldset input {
+  margin-bottom: 5px;
+  padding: 5px;
 }
 
 .footer {

@@ -38,6 +38,15 @@ table +=
 document.getElementById('table').innerHTML = table
 /* insérer du HTML dans l'element avec l'ID "table" */
 
+let deleteById = (objJson, idToRemove) => {
+    for(let key in objJson){
+        let {id} = objJson[key] | {}
+        if(id === "5beaa8bf1c9d440000a57d94"){
+            delete objJson[key]
+        }
+    }
+}
+
 let elt = document.getElementById("ctaDelete")
 elt.onclick = function(){
     alert("Votre produit à bien été retiré du panier !")

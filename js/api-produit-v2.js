@@ -30,7 +30,6 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
                         /* ajoute une entrée "quantity" à "data" et egal à 1 */
                         objet = JSON.stringify({[data._id]:data})
                         /* convertit une valeur JavaScript en une chaîne de caractere */
-                        console.log(objet)
                     } else {
                     /* sinon faire.. */
                         if(cart[data._id]) {
@@ -41,10 +40,8 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
                             cart[data._id] = data
                         }
                         objet = JSON.stringify(cart)
-                        console.log(objet)
                     }
                     localStorage.setItem("obj",objet)
-                    console.log(localStorage)
                 }
             let colors = ""
             data.colors.forEach(element => {
