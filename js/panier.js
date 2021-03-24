@@ -19,9 +19,9 @@ for(var obj in objJson) {
         <tr>
             <td>${objJson[obj].name}</td>
             <td>${objJson[obj]._id}</div></td>
-            <td>${objJson[obj].quantity}</td>
+            <td><input type="number" value="${objJson[obj].quantity}" min="1" onchange="changePrice()"></td>
             <td>${objJson[obj].price / 100} €</td>
-            <td><button id="ctaDelete">&#x274C;</button></td>
+            <td><button onclick="deleteItem('${objJson[obj]._id}')">&#x274C;</button></td>
         </tr>
     `
 }
@@ -37,20 +37,17 @@ table +=
 document.getElementById('table').innerHTML = table
 /* insérer du HTML dans l'element avec l'ID "table" */
 
-
-let deleteById = (objJson, idToRemove) => {
-    idToRemove = "5beaa8bf1c9d440000a57d94"
-    for(let obj in objJson){
-        let {id} = objJson[obj] | {}
-        if(id === "5beaa8bf1c9d440000a57d94"){
-            delete objJson[obj]
-        }
-    }
+let elt = document.getElementsByClassName("ctaDelete")
+function deleteItem(idToRemove){
+    delete objJson[idToRemove]
+    alert("Le produit à bien été retiré du panier ✓")
+    localStorage.setItem("obj", JSON.stringify(objJson))
+    location.reload()
 }
 
-let elt = document.getElementById("ctaDelete")
-elt.onclick = function(){
-    deleteById()
-    alert("Votre produit à bien été retiré du panier !")
+function changePrice(){
+    alert("La quantité du produit à bien changé ✓")
+    objJson[obj].price = objJson[obj].price * 2
+    localStorage.setItem("obj", JSON.stringify(objJson))
     location.reload()
 }
