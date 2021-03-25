@@ -19,7 +19,7 @@ for(var obj in objJson) {
         <tr>
             <td>${objJson[obj].name}</td>
             <td>${objJson[obj]._id}</div></td>
-            <td><input type="number" value="${objJson[obj].quantity}" min="1" onchange="changePrice()"></td>
+            <td><input type="number" value="${objJson[obj].quantity}" min="1" onchange="changePrice('${objJson[obj]._id}')"></td>
             <td>${objJson[obj].price / 100} €</td>
             <td><button onclick="deleteItem('${objJson[obj]._id}')">&#x274C;</button></td>
         </tr>
@@ -45,9 +45,11 @@ function deleteItem(idToRemove){
     location.reload()
 }
 
-function changePrice(){
+function changePrice(varQuantity){
+    objJson[varQuantity].quantity++
+    console.log(objJson[varQuantity].price)
+    console.log(objJson[varQuantity].quantity)
     alert("La quantité du produit à bien changé ✓")
-    objJson[obj].price = objJson[obj].price * 2
     localStorage.setItem("obj", JSON.stringify(objJson))
-    location.reload()
 }
+
