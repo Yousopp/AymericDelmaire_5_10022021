@@ -4,6 +4,8 @@ let id = params.get("id")
 /* recuperation du parametre ID dans une variable */
 const produit = document.getElementById('container-produit')
 /* Recuperation de l'element HTML "container-produit" dans une variable */
+var logoNew = document.getElementById('logoNew')
+logoNew.style.display = 'none'
 
 fetch(`http://localhost:3000/api/teddies/${id}`)
 /* appel de l'API avec la methode FETCH avec le parametre ID */
@@ -16,7 +18,6 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
             /* stocker l'élément BUTTON dans la variable elt */
                 elt.onclick = function (){
                 /* quand "elt" est cliqué, lancer la function.. */
-                    alert('Votre article a bien été ajouté au panier !')
                     /* message d'alerte sur le navigateur */
                     let itemCart = localStorage.getItem("obj")
                     /* ajout de l'item du localStorage "obj" dans une variable "itemCart" */
@@ -30,6 +31,8 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
                         /* ajoute une entrée "quantity" à "data" et egal à 1 */
                         objet = JSON.stringify({[data._id]:data})
                         /* convertit une valeur JavaScript en une chaîne de caractere */
+                        logoNew.style.display = 'block'
+                        animateLogoNew()
                     } else {
                     /* sinon faire.. */
                         if(cart[data._id]) {
@@ -78,3 +81,7 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
         document.getElementById('erreur').innerHTML = "<strong>Erreur de chargement</strong>"
     }
 })
+
+function animateLogoNew() {
+    logoNew.style.transform = 'transform: scale(1.2)'
+}

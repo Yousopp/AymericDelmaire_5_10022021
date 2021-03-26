@@ -35,19 +35,26 @@
     color: $color-dark;
     font-weight: 700;
     font-family: "Permanent Marker", cursive;
+    transition: 0.3s ease-out;
+    &:hover {
+      color: $color-primary;
+    }
   }
   &__lien-panier {
-    border: $color-primary solid 2px;
-    border-radius: 50px;
-    padding: 5px;
+    position: relative;
     & a {
       @include flex(row, space-around, center, center, center);
       color: $color-primary;
       font-weight: 700;
     }
     & svg {
-      fill: $color-primary;
-      margin-left: 10px;
+      fill: $color-dark;
+      margin-left: 5px;
+      transition: ease-out 0.3s;
+      z-index: 1;
+      &:hover {
+        fill: $color-primary;
+      }
     }
   }
 }

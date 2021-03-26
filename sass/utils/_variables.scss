@@ -14,6 +14,15 @@ $color-shadow: #686868;
   text-overflow: ellipsis;
 }
 
+#logoNew {
+  position: absolute;
+  bottom: 7px;
+  right: 7.5px;
+  transition: 0.4s ease-out;
+  animation: test;
+  animation-play-state: paused;
+}
+
 @mixin placement($column, $row) {
   grid-column: $column;
   grid-row: $row;

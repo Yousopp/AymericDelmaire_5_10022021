@@ -40,7 +40,7 @@ document.getElementById('table').innerHTML = table
 let elt = document.getElementsByClassName("ctaDelete")
 function deleteItem(idToRemove){
     delete objJson[idToRemove]
-    alert("Le produit à bien été retiré du panier ✓")
+    /*alert("Le produit à bien été retiré du panier ✓")*/
     localStorage.setItem("obj", JSON.stringify(objJson))
     location.reload()
 }

@@ -8,6 +8,15 @@
   text-overflow: ellipsis;
 }
 
+#logoNew {
+  position: absolute;
+  bottom: 7px;
+  right: 7.5px;
+  transition: 0.4s ease-out;
+  animation: test;
+  animation-play-state: paused;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -132,11 +141,13 @@ h2 {
   color: #261624;
   font-weight: 700;
   font-family: "Permanent Marker", cursive;
+  transition: 0.3s ease-out;
+}
+.header a:hover {
+  color: #7434ff;
 }
 .header__lien-panier {
-  border: #7434ff solid 2px;
-  border-radius: 50px;
-  padding: 5px;
+  position: relative;
 }
 .header__lien-panier a {
   display: flex;
@@ -149,8 +160,13 @@ h2 {
   font-weight: 700;
 }
 .header__lien-panier svg {
+  fill: #261624;
+  margin-left: 5px;
+  transition: ease-out 0.3s;
+  z-index: 1;
+}
+.header__lien-panier svg:hover {
   fill: #7434ff;
-  margin-left: 10px;
 }
 
 .produit {
