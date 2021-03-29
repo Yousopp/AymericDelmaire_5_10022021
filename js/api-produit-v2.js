@@ -32,7 +32,7 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
                         objet = JSON.stringify({[data._id]:data})
                         /* convertit une valeur JavaScript en une chaîne de caractere */
                         logoNew.style.display = 'block'
-                        animateLogoNew()
+                        animateLogoNew()/*en cours*/
                     } else {
                     /* sinon faire.. */
                         if(cart[data._id]) {
