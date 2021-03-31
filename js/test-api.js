@@ -36,7 +36,16 @@ fetch('http://localhost:3000/api/teddies')/*Méthode Fetch pour aller chercher l
             console.log("ERROR")
             document.getElementById('erreur').innerHTML = "<strong>Erreur de chargement</strong>"
         }
-    })
+})
 
-/****************************************************/
+function addLogoNew() {
+    var logoNew = document.getElementById('logoNew')
+    if (localStorage.cart === '{}' || localStorage.length <= 1) {
+        logoNew.style.display = 'none'
+    } else {
+        logoNew.getElementsByClassName('appear').innerHTML = 'display: block;'
+    }
+}
+addLogoNew()
+    
 

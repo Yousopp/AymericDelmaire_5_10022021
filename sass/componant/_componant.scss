@@ -149,6 +149,7 @@
 
 .panier {
   margin: 30px auto;
+  height: 100%;
   & p {
     text-align: center;
   }
@@ -163,7 +164,7 @@
   & button {
     font-size: 20px;
     font-weight: 500;
-    margin: 0 auto;
+    margin: 20px auto;
     border: solid $color-primary 2px;
     border-radius: 50px;
     padding: 5px 15px;

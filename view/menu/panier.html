@@ -59,27 +59,28 @@
     <!--Main-->
     <main class="panier">
       <table id="table"></table>
-      <form method="post" action="traitement.php">
+      <form method="POST" action="http://localhost:3000/api/teddies/order">
         <fieldset>
           <legend>Vos coordonnées</legend>
 
-          <label for="nom">Quel est votre nom ?</label>
-          <input type="text" name="nom" id="nom" />
+          <label for="firstName">Quel est votre prénom ?</label>
+          <input type="text" name="firstName" id="firstName" />
 
-          <label for="prenom">Quel est votre prénom ?</label>
-          <input type="text" name="prenom" id="prenom" />
+          <label for="lastName">Quel est votre nom ?</label>
+          <input type="text" name="lastName" id="lastName" />
 
-          <label for="adresse">Quel est votre adresse ?</label>
-          <input type="text" name="adresse" id="adresse" />
+          <label for="address">Quel est votre adresse ?</label>
+          <input type="text" name="address" id="address" />
 
-          <label for="ville">Quel est votre ville ?</label>
-          <input type="text" name="ville" id="ville" />
+          <label for="city">Quel est votre ville ?</label>
+          <input type="text" name="city" id="city" />
 
           <label for="email">Quel est votre e-mail ?</label>
           <input type="email" name="email" id="email" />
+
+          <button>Commander</button>
         </fieldset>
       </form>
-      <button>Commander</button>
     </main>
 
     <!--Footer-->

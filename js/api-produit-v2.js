@@ -4,8 +4,6 @@ let id = params.get("id")
 /* recuperation du parametre ID dans une variable */
 const produit = document.getElementById('container-produit')
 /* Recuperation de l'element HTML "container-produit" dans une variable */
-var logoNew = document.getElementById('logoNew')
-logoNew.style.display = 'none'
 
 fetch(`http://localhost:3000/api/teddies/${id}`)
 /* appel de l'API avec la methode FETCH avec le parametre ID */
@@ -19,7 +17,7 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
                 elt.onclick = function (){
                 /* quand "elt" est cliqué, lancer la function.. */
                     /* message d'alerte sur le navigateur */
-                    let itemCart = localStorage.getItem("obj")
+                    let itemCart = localStorage.getItem("cart")
                     /* ajout de l'item du localStorage "obj" dans une variable "itemCart" */
                     let cart = JSON.parse(itemCart)
                     /* transformation de "itemCart" en objet Json et mis dans une variable "cart" */
@@ -29,22 +27,23 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
                     /* si "cart" est null alors faire.. */
                         data.quantity = 1
                         /* ajoute une entrée "quantity" à "data" et egal à 1 */
+                        data.priceTotal = data.quantity * data.price
                         objet = JSON.stringify({[data._id]:data})
                         /* convertit une valeur JavaScript en une chaîne de caractere */
-                        logoNew.style.display = 'block'
                         animateLogoNew()/*en cours*/
                     } else {
                     /* sinon faire.. */
                         if(cart[data._id]) {
                             cart[data._id].quantity++
-                            cart[data._id].price = cart[data._id].quantity * data.price
                         } else {
                             data.quantity = 1
                             cart[data._id] = data
                         }
+                        cart[data._id].priceTotal = cart[data._id].quantity * data.price
                         objet = JSON.stringify(cart)
                     }
-                    localStorage.setItem("obj",objet)
+                    localStorage.setItem("cart",objet)
+                    location.reload()
                 }
             let colors = ""
             data.colors.forEach(element => {
@@ -64,7 +63,7 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
                             <p>${data.description}</p>
                             <br>
                             <div class="produit__card__color">
-                                <label for="head">Couleur :</label>
+                                <label for="head">Couleurs :</label>
                                 <select name="color" id="color-select">
                                 `+colors+`
                                 </select>
@@ -82,6 +81,18 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
     }
 })
 
+function addLogoNew() {
+    var logoNew = document.getElementById('logoNew')
+    if (localStorage.cart === '{}' || localStorage.length <= 1) {
+        logoNew.style.display = 'none'
+    } else {
+        logoNew.getElementsByClassName('appear').innerHTML = 'display: block;'
+    }
+}
+addLogoNew()
+
 function animateLogoNew() {
     logoNew.style.transform = 'transform: scale(1.2)'
 }
+
+

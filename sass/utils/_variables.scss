@@ -23,6 +23,10 @@ $color-shadow: #686868;
   animation-play-state: paused;
 }
 
+.appear {
+  display: none;
+}
+
 @mixin placement($column, $row) {
   grid-column: $column;
   grid-row: $row;
