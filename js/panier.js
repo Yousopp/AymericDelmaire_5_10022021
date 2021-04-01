@@ -84,3 +84,23 @@ function calculPriceTotal() {
     document.getElementById("priceTotal").innerHTML = `${priceTotalCart / 100} €`
 }
 calculPriceTotal()
+
+//----------------------POST------------------------//
+
+const contact = {
+    firstName: 'John',
+    lastName: 'Lilly',
+    address: '34 rue Martinez',
+    city: 'Reims',
+    email: 'test@hotmail.com'
+};
+ 
+const options = {
+    method: 'POST',
+    body: JSON.stringify(contact),
+    product_id: new Array(objJson)
+}
+ 
+fetch('http://localhost:3000/api/teddies/order', options)
+    .then(res => res.json())
+    .then(res => console.log(res));
