@@ -59,26 +59,31 @@
     <!--Main-->
     <main class="panier">
       <table id="table"></table>
-      <form method="POST" action="http://localhost:3000/api/teddies/order">
+      <form
+        id="formCommand"
+        method="POST"
+        action="http://localhost:3000/api/teddies/order"
+        onsubmit="return valid()"
+      >
         <fieldset>
           <legend>Vos coordonnées</legend>
 
           <label for="firstName">Quel est votre prénom ?</label>
-          <input type="text" name="firstName" id="firstName" />
+          <input type="text" name="firstName" id="firstName" required />
 
           <label for="lastName">Quel est votre nom ?</label>
-          <input type="text" name="lastName" id="lastName" />
+          <input type="text" name="lastName" id="lastName" required />
 
           <label for="address">Quel est votre adresse ?</label>
-          <input type="text" name="address" id="address" />
+          <input type="text" name="address" id="address" required />
 
           <label for="city">Quel est votre ville ?</label>
-          <input type="text" name="city" id="city" />
+          <input type="text" name="city" id="city" required />
 
           <label for="email">Quel est votre e-mail ?</label>
-          <input type="email" name="email" id="email" />
-
-          <button>Commander</button>
+          <input type="email" name="email" id="email" required />
+          <br />
+          <input id="validCommand" type="submit" value="Commander" />
         </fieldset>
       </form>
     </main>

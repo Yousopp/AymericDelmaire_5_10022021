@@ -87,20 +87,41 @@ calculPriceTotal()
 
 //----------------------POST------------------------//
 
-const contact = {
-    firstName: 'John',
-    lastName: 'Lilly',
-    address: '34 rue Martinez',
-    city: 'Reims',
-    email: 'test@hotmail.com'
-};
+function valid(){
+    if(document.forms['formCommand'] != "") {
+      // les données sont ok, on peut envoyer le formulaire    
+      return true;
+    }
+    else {
+      // sinon on affiche un message
+      alert("Veuilliez remplir le formulaire.");
+      return false;
+    }
+  }
+
  
-const options = {
-    method: 'POST',
-    body: JSON.stringify(contact),
-    product_id: new Array(objJson)
+let element = document.getElementById("validCommand")
+element.onclick = function (){
+    const contact = {
+        firstName: document.getElementById("firstName").value,
+        lastName: document.getElementById("lastName").value,
+        address: document.getElementById("address").value,
+        city: document.getElementById("city").value,
+        email: document.getElementById("email").value
+    };
+    
+    const products = [objJson]
+     
+    const command = {contact, products}
+    
+    const options = {
+        method: "POST",
+        body: JSON.stringify(command),
+        headers: {
+            "Content-Type" : "application/json"
+        }
+    }
+    fetch('http://localhost:3000/api/teddies/order', options)
+        .then(res => res.json())
+        .then(res => console.log(res));
 }
- 
-fetch('http://localhost:3000/api/teddies/order', options)
-    .then(res => res.json())
-    .then(res => console.log(res));

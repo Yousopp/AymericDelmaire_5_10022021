@@ -342,6 +342,12 @@ h2 {
   margin-bottom: 5px;
   padding: 5px;
 }
+.panier form fieldset input:invalid {
+  border: 2px dashed red;
+}
+.panier form fieldset input:valid {
+  border: 2px solid #02ff02;
+}
 
 .footer {
   background-color: #261624;
