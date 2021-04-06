@@ -99,9 +99,6 @@ function valid(){
     }
   }
 
- 
-let element = document.getElementById("validCommand")
-element.onclick = function (){
     const contact = {
         firstName: document.getElementById("firstName").value,
         lastName: document.getElementById("lastName").value,
@@ -110,7 +107,7 @@ element.onclick = function (){
         email: document.getElementById("email").value
     };
     
-    const products = [objJson]
+    const products = ['5beaaa8f1c9d440000a57d95']
      
     const command = {contact, products}
     
@@ -124,4 +121,3 @@ element.onclick = function (){
     fetch('http://localhost:3000/api/teddies/order', options)
         .then(res => res.json())
         .then(res => console.log(res));
-}
