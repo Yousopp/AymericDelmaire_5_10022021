@@ -1,0 +1,19 @@
+main {
+  height: calc(100vh - 150px);
+}
+
+#confirmation {
+  height: 100%;
+  width: 500px;
+  margin: auto;
+  text-align: center;
+
+  @include sm {
+    width: 250px;
+  }
+
+  @include flex(column, center, none, none, none);
+  & p {
+    padding: 20px;
+  }
+}

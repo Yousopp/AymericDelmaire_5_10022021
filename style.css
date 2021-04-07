@@ -572,4 +572,29 @@ h2 {
   border: none;
 }
 
+main {
+  height: calc(100vh - 150px);
+}
+
+#confirmation {
+  height: 100%;
+  width: 500px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: none;
+  align-content: none;
+  align-items: none;
+}
+@media (max-width: 576px) {
+  #confirmation {
+    width: 250px;
+  }
+}
+#confirmation p {
+  padding: 20px;
+}
+
 /*# sourceMappingURL=style.css.map */

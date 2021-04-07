@@ -88,36 +88,49 @@ calculPriceTotal()
 //----------------------POST------------------------//
 
 function valid(){
-    if(document.forms['formCommand'] != "") {
-      // les données sont ok, on peut envoyer le formulaire    
-      return true;
-    }
-    else {
-      // sinon on affiche un message
-      alert("Veuilliez remplir le formulaire.");
-      return false;
-    }
-  }
 
-    const contact = {
+    if(document.forms['formCommand'] != "") {
+      // les données sont ok, on peut envoyer le formulaire
+
+      const contact = {
         firstName: document.getElementById("firstName").value,
         lastName: document.getElementById("lastName").value,
         address: document.getElementById("address").value,
         city: document.getElementById("city").value,
         email: document.getElementById("email").value
-    };
-    
-    const products = ['5beaaa8f1c9d440000a57d95']
-     
-    const command = {contact, products}
-    
-    const options = {
+      };
+
+      const products = [localStorage.cart]
+        
+      const command = {contact, products}
+        
+      const options = {
         method: "POST",
         body: JSON.stringify(command),
         headers: {
             "Content-Type" : "application/json"
         }
+      }
+
+      fetch('http://localhost:3000/api/teddies/order', options)
+          .then(res => res.json())
+          .then(res => { 
+            if (res.orderId) {
+              console.log(res);
+              alert(`Votre commande numéro ${res.orderId} bien été passée.`)
+              window.location = `/view/menu/confirmation.html?orderId=${res.orderId}&firstName=${res.contact.firstName}`
+            } else {
+              alert(`Erreur de commande`)
+            }
+          });
+      return true;
     }
-    fetch('http://localhost:3000/api/teddies/order', options)
-        .then(res => res.json())
-        .then(res => console.log(res));
+
+    else {
+      // sinon on affiche un message
+      alert("Veuilliez remplir le formulaire.");
+      return false;
+    }
+
+  }
+
