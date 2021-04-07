@@ -28,7 +28,7 @@ if (objet === '{}' || objet === null) {
         `
             <tr>
                 <td>${objJson[obj].name}</td>
-                <td>${objJson[obj]._id}</div></td>
+                <td id="productsId">${objJson[obj]._id}</div></td>
                 <td><input type="number" value="${objJson[obj].quantity}" min="1" onchange="updateQuantity('${objJson[obj]._id}', this.value)"></td>
                 <td id="priceTotal-${objJson[obj]._id}">${objJson[obj].priceTotal / 100} €</td>
                 <td><button onclick="deleteItem('${objJson[obj]._id}')">&#x274C;</button></td>
@@ -100,7 +100,9 @@ function valid(){
         email: document.getElementById("email").value
       };
 
-      const products = [localStorage.cart]
+      const products = [Object.keys(objJson)]
+      // Met dans une variable les noms des propriétés propres à l'objet : objJson
+      // Ce qui donne ["a", "b", ...]
         
       const command = {contact, products}
         
