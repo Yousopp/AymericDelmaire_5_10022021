@@ -30,7 +30,6 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
                         data.priceTotal = data.quantity * data.price
                         objet = JSON.stringify({[data._id]:data})
                         /* convertit une valeur JavaScript en une chaîne de caractere */
-                        animateLogoNew()/*en cours*/
                     } else {
                     /* sinon faire.. */
                         if(cart[data._id]) {
@@ -90,9 +89,5 @@ function addLogoNew() {
     }
 }
 addLogoNew()
-
-function animateLogoNew() {
-    logoNew.style.transform = 'transform: scale(1.2)'
-}
 
 

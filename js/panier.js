@@ -3,6 +3,9 @@ let objet = localStorage.getItem("cart")
 let objJson = JSON.parse(objet)
 /* transformer la chaîne Json en objet dans var "objJson*/
 
+
+//Création d'un tableau pour afficher les produits du panier
+//Il y a un message par défaut si le panier est vide
 if (objet === '{}' || objet === null) {
     let table = 
     `
@@ -48,14 +51,27 @@ if (objet === '{}' || objet === null) {
     /* insérer du HTML dans l'element avec l'ID "table" */
 }
 
+//Fonction qui supprime la ligne de produit lors du clique sur le bouton
 let elt = document.getElementsByClassName("ctaDelete")
 function deleteItem(idToRemove){
     delete objJson[idToRemove]
-    /*alert("Le produit à bien été retiré du panier ✓")*/
     localStorage.setItem("cart", JSON.stringify(objJson))
     location.reload()
 }
 
+//Fonction pour créer un prixTotal afin de l'utiliser pour afficher le prix total plus facillement dans la panier
+function calculPriceTotal() {
+    var cart = JSON.parse(localStorage.getItem("cart"))
+    var priceTotalCart = 0
+    for (var obj in cart) {
+        priceTotalCart += cart[obj].priceTotal
+    }
+    localStorage.setItem("priceTotal", priceTotalCart)
+    document.getElementById("priceTotal").innerHTML = `${priceTotalCart / 100} €`
+}
+calculPriceTotal()
+
+//Fonction qui modifie la quantité directement sur la page du panier et mets à jour le prixTotal
 function updateQuantity(idObject, valueQuantity){
     objJson[idObject].quantity = valueQuantity
     objJson[idObject].priceTotal = objJson[idObject].quantity * objJson[idObject].price
@@ -74,19 +90,9 @@ function addLogoNew() {
 }
 addLogoNew()
 
-function calculPriceTotal() {
-    var cart = JSON.parse(localStorage.getItem("cart"))
-    var priceTotalCart = 0
-    for (var obj in cart) {
-        priceTotalCart += cart[obj].priceTotal
-    }
-    localStorage.setItem("priceTotal", priceTotalCart)
-    document.getElementById("priceTotal").innerHTML = `${priceTotalCart / 100} €`
-}
-calculPriceTotal()
+//----------------------Méthode POST------------------------//
 
-//----------------------POST------------------------//
-
+//Fonction qui valide le formulaire et l'envoi, via la méthode POST, au serveur afin d'avoir une réponse
 function valid(){
 
     if(document.forms['formCommand'] != "") {
