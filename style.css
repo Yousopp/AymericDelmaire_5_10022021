@@ -26,10 +26,6 @@
   padding: 0;
 }
 
-body, html {
-  height: 100%;
-}
-
 body {
   font-family: "Roboto", sans-serif;
   max-width: 1500px;
@@ -174,7 +170,7 @@ h2 {
 }
 
 .produit {
-  margin: 0 auto 30px auto;
+  margin: 0 auto 10px auto;
   height: calc(100vh - 180px);
 }
 @media (max-width: 768px) {
@@ -303,10 +299,10 @@ h2 {
 .panier button {
   font-size: 20px;
   font-weight: 500;
-  margin: 20px auto;
+  margin: 5px auto;
   border: solid #7434ff 2px;
   border-radius: 50px;
-  padding: 5px 15px;
+  padding: 0 2px;
   font-family: "Permanent Marker", cursive;
   color: #7434ff;
   background-color: white;
@@ -319,7 +315,6 @@ h2 {
   align-items: center;
   cursor: pointer;
   transition: 0.3s;
-  box-shadow: 5px 5px 5px #686868;
 }
 .panier button:hover {
   background-color: #7434ff;
@@ -341,6 +336,21 @@ h2 {
 .panier form fieldset input {
   margin-bottom: 5px;
   padding: 5px;
+}
+.panier form fieldset input#validCommand {
+  border: solid 2px #7434ff;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #7434ff;
+  font-family: "Permanent Marker", cursive;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+.panier form fieldset input#validCommand:hover {
+  background-color: #7434ff;
+  color: white;
 }
 .panier form fieldset input:invalid {
   border: 2px dashed red;

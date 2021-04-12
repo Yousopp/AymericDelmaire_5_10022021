@@ -52,12 +52,21 @@ if (objet === '{}' || objet === null) {
 }
 
 //Fonction qui supprime la ligne de produit lors du clique sur le bouton
-let elt = document.getElementsByClassName("ctaDelete")
 function deleteItem(idToRemove){
     delete objJson[idToRemove]
     localStorage.setItem("cart", JSON.stringify(objJson))
     location.reload()
 }
+
+function addLogoNew() {
+    var logoNew = document.getElementById('logoNew')
+    if (localStorage.cart === '{}' || localStorage.length <= 1) {
+        logoNew.style.display = 'none'
+    } else {
+        logoNew.getElementsByClassName('appear').innerHTML = 'display: block;'
+    }
+}
+addLogoNew()
 
 //Fonction pour créer un prixTotal afin de l'utiliser pour afficher le prix total plus facillement dans la panier
 function calculPriceTotal() {
@@ -79,16 +88,6 @@ function updateQuantity(idObject, valueQuantity){
     localStorage.setItem("cart", JSON.stringify(objJson))
     calculPriceTotal()
 }
-
-function addLogoNew() {
-    var logoNew = document.getElementById('logoNew')
-    if (objet === '{}' || objet === null) {
-        logoNew.style.display = 'none'
-    } else {
-        logoNew.getElementsByClassName('appear').innerHTML = 'display: block;'
-    }
-}
-addLogoNew()
 
 //----------------------Méthode POST------------------------//
 
@@ -125,7 +124,7 @@ function valid(){
           .then(res => { 
             if (res.orderId) {
               console.log(res);
-              alert(`Votre commande numéro ${res.orderId} bien été passée.`)
+              alert(`Votre commande numéro ${res.orderId} à bien été passée.`)
               window.location = `/view/menu/confirmation.html?orderId=${res.orderId}&firstName=${res.contact.firstName}`
             } else {
               alert(`Erreur de commande`)
