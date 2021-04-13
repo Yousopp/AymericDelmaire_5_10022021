@@ -60,11 +60,14 @@
 }
 
 .produit {
-  margin: 0 auto 10px auto;
-  height: calc(100vh - 180px);
+  margin: 0 auto;
+  height: calc(100vh - 150px);
 
   @include md {
     height: 100vh;
+  }
+  @include sm {
+    height: auto;
   }
   & h1 {
     text-align: center;
@@ -107,7 +110,7 @@
       }
     }
     &__panier {
-      margin: 10px auto;
+      margin: 40px auto;
       @include placement(1, 5);
       font-size: 20px;
       font-weight: 500;
@@ -147,8 +150,23 @@
   }
 }
 
+td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+
+  @include sm {
+    max-width: 60px;
+  }
+}
+
+#tdInputNumber {
+  width: 55px;
+}
+
 .panier {
-  margin: 30px auto;
+  margin: 47.5px auto;
   height: 100%;
   & p {
     text-align: center;
@@ -159,7 +177,7 @@
   }
   & td {
     border: 1px solid black;
-    padding: 5px 10px;
+    padding: 5px;
   }
   & button {
     font-size: 20px;
@@ -183,6 +201,11 @@
   & form {
     width: 400px;
     margin: 40px auto;
+
+    @include sm {
+      width: auto;
+      margin: 15px 8px;
+    }
     & fieldset {
       @include flex(column, space-between, none, center, none);
       padding: 10px;

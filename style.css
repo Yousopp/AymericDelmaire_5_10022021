@@ -170,12 +170,17 @@ h2 {
 }
 
 .produit {
-  margin: 0 auto 10px auto;
-  height: calc(100vh - 180px);
+  margin: 0 auto;
+  height: calc(100vh - 150px);
 }
 @media (max-width: 768px) {
   .produit {
     height: 100vh;
+  }
+}
+@media (max-width: 576px) {
+  .produit {
+    height: auto;
   }
 }
 .produit h1 {
@@ -237,7 +242,7 @@ h2 {
   margin: 0 10px;
 }
 .produit__card__panier {
-  margin: 10px auto;
+  margin: 40px auto;
   grid-column: 1;
   grid-row: 5;
   font-size: 20px;
@@ -281,8 +286,24 @@ h2 {
   list-style-type: none;
 }
 
+td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+@media (max-width: 576px) {
+  td {
+    max-width: 60px;
+  }
+}
+
+#tdInputNumber {
+  width: 55px;
+}
+
 .panier {
-  margin: 30px auto;
+  margin: 47.5px auto;
   height: 100%;
 }
 .panier p {
@@ -294,7 +315,7 @@ h2 {
 }
 .panier td {
   border: 1px solid black;
-  padding: 5px 10px;
+  padding: 5px;
 }
 .panier button {
   font-size: 20px;
@@ -323,6 +344,12 @@ h2 {
 .panier form {
   width: 400px;
   margin: 40px auto;
+}
+@media (max-width: 576px) {
+  .panier form {
+    width: auto;
+    margin: 15px 8px;
+  }
 }
 .panier form fieldset {
   display: flex;

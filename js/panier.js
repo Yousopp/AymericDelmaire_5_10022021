@@ -32,7 +32,7 @@ if (objet === '{}' || objet === null) {
             <tr>
                 <td>${objJson[obj].name}</td>
                 <td id="productsId">${objJson[obj]._id}</div></td>
-                <td><input type="number" value="${objJson[obj].quantity}" min="1" onchange="updateQuantity('${objJson[obj]._id}', this.value)"></td>
+                <td><input id="tdInputNumber" type="number" value="${objJson[obj].quantity}" min="1" onchange="updateQuantity('${objJson[obj]._id}', this.value)"></td>
                 <td id="priceTotal-${objJson[obj]._id}">${objJson[obj].priceTotal / 100} €</td>
                 <td><button onclick="deleteItem('${objJson[obj]._id}')">&#x274C;</button></td>
             </tr>
@@ -41,9 +41,7 @@ if (objet === '{}' || objet === null) {
     table += 
     `
     <tr>
-        <td></td>
-        <td></td>
-        <td><strong>Total</strong></td>
+        <td  colspan="3"><strong>Total</strong></td>
         <td id="priceTotal"><strong></strong></td>
     </tr>
     `
