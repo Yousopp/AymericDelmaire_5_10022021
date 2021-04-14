@@ -164,11 +164,7 @@ td {
 
 .panier {
   margin: 47.5px auto;
-  height: calc(100vh - 150px);
-
-  @include md {
-    height: auto;
-  }
+  height: auto;
   & p {
     text-align: center;
   }
