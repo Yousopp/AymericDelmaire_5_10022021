@@ -1,8 +1,4 @@
-/*
-FETCH
-*/
-
-/*Page dynamique index.HTML, afficher les éléments dans des cartes avec les données de l'API*/
+//Page dynamique index.HTML, afficher les éléments dans des cartes avec les données de l'API
 
 const container = document.getElementById('container-article')/*Créer une variable qui récupère mon ID du container*/
 
@@ -37,17 +33,3 @@ fetch('http://localhost:3000/api/teddies')/*Méthode Fetch pour aller chercher l
             document.getElementById('erreur').innerHTML = "<strong>Erreur de chargement</strong>"
         }
 })
-
-//Apparition du logo NEW dans le panier lorsque celui-ci est rempli, par défaut il est non visible
-//Méthode utilisée : changement du display de none à block en changeant la classe
-function addLogoNew() {
-    var logoNew = document.getElementById('logoNew')
-    if (localStorage.cart === '{}' || localStorage.length <= 1) {
-        logoNew.style.display = 'none'
-    } else {
-        logoNew.getElementsByClassName('appear').innerHTML = 'display: block;'
-    }
-}
-addLogoNew()
-    
-

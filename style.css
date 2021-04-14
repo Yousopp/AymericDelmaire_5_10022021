@@ -175,11 +175,6 @@ h2 {
 }
 @media (max-width: 768px) {
   .produit {
-    height: 100vh;
-  }
-}
-@media (max-width: 576px) {
-  .produit {
     height: auto;
   }
 }
@@ -304,7 +299,12 @@ td {
 
 .panier {
   margin: 47.5px auto;
-  height: 100%;
+  height: calc(100vh - 150px);
+}
+@media (max-width: 768px) {
+  .panier {
+    height: auto;
+  }
 }
 .panier p {
   text-align: center;

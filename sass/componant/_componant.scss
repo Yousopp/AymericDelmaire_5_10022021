@@ -64,9 +64,6 @@
   height: calc(100vh - 150px);
 
   @include md {
-    height: 100vh;
-  }
-  @include sm {
     height: auto;
   }
   & h1 {
@@ -167,7 +164,11 @@ td {
 
 .panier {
   margin: 47.5px auto;
-  height: 100%;
+  height: calc(100vh - 150px);
+
+  @include md {
+    height: auto;
+  }
   & p {
     text-align: center;
   }

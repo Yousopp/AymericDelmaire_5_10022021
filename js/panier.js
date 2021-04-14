@@ -56,16 +56,6 @@ function deleteItem(idToRemove){
     location.reload()
 }
 
-function addLogoNew() {
-    var logoNew = document.getElementById('logoNew')
-    if (localStorage.cart === '{}' || localStorage.length <= 1) {
-        logoNew.style.display = 'none'
-    } else {
-        logoNew.getElementsByClassName('appear').innerHTML = 'display: block;'
-    }
-}
-addLogoNew()
-
 //Fonction pour créer un prixTotal afin de l'utiliser pour afficher le prix total plus facillement dans la panier
 function calculPriceTotal() {
     var cart = JSON.parse(localStorage.getItem("cart"))
@@ -74,7 +64,9 @@ function calculPriceTotal() {
         priceTotalCart += cart[obj].priceTotal
     }
     localStorage.setItem("priceTotal", priceTotalCart)
-    document.getElementById("priceTotal").innerHTML = `${priceTotalCart / 100} €`
+    if (document.getElementById("priceTotal") != null) {
+        document.getElementById("priceTotal").innerHTML = `${priceTotalCart / 100} €`
+    }
 }
 calculPriceTotal()
 
@@ -116,25 +108,22 @@ function valid(){
             "Content-Type" : "application/json"
         }
       }
-
+      
       fetch('http://localhost:3000/api/teddies/order', options)
           .then(res => res.json())
           .then(res => { 
             if (res.orderId) {
-              console.log(res);
               alert(`Votre commande numéro ${res.orderId} à bien été passée.`)
               window.location = `/view/menu/confirmation.html?orderId=${res.orderId}&firstName=${res.contact.firstName}`
             } else {
               alert(`Erreur de commande`)
             }
           });
-      return true;
     }
 
     else {
       // sinon on affiche un message
       alert("Veuilliez remplir le formulaire.");
-      return false;
     }
 
   }
