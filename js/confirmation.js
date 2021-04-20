@@ -14,3 +14,4 @@ let confirmation =
         <p>Prix total : <strong>${localStorage.priceTotal / 100}</strong> €</p>
     `
 document.getElementById('confirmation').innerHTML = confirmation
+localStorage.clear()//MODIFICATION//

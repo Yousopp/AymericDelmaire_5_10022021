@@ -69,19 +69,46 @@
           <legend>Vos coordonnées</legend>
 
           <label for="firstName">Quel est votre prénom ?</label>
-          <input type="text" name="firstName" id="firstName" required />
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            pattern="[a-zA-Z]{1,10}"
+            title="1 à 10 lettres"
+            required
+          />
 
           <label for="lastName">Quel est votre nom ?</label>
-          <input type="text" name="lastName" id="lastName" required />
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            pattern="[a-zA-Z]{1,10}"
+            title="1 à 10 lettres"
+            required
+          />
 
           <label for="address">Quel est votre adresse ?</label>
           <input type="text" name="address" id="address" required />
 
           <label for="city">Quel est votre ville ?</label>
-          <input type="text" name="city" id="city" required />
+          <input
+            type="text"
+            name="city"
+            id="city"
+            pattern="[a-zA-Z]{1,10}"
+            title="1 à 10 lettres"
+            required
+          />
 
           <label for="email">Quel est votre e-mail ?</label>
-          <input type="email" name="email" id="email" required />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            required
+          />
           <br />
           <input id="validCommand" type="submit" value="Commander" />
         </fieldset>
