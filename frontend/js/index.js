@@ -17,7 +17,7 @@ fetch('http://localhost:3000/api/teddies')/*Méthode Fetch pour aller chercher l
                             <div class="card__description">
                                 <img
                                 class="rating-star"
-                                src="./images/rating_5.png"
+                                src="/frontend/images/rating_5.png"
                                 alt="Note 5 étoiles sur 5"
                                 />
                                 <p>${element.price / 100} €</p>
