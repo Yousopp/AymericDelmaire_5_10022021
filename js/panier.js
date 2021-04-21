@@ -114,7 +114,9 @@ function valid(){
           .then(res => { 
             if (res.orderId) {
               alert(`Votre commande numéro ${res.orderId} à bien été passée.`)
-              window.location = `/view/menu/confirmation.html?orderId=${res.orderId}&firstName=${res.contact.firstName}`
+              localStorage.setItem("orderId", res.orderId)
+              localStorage.setItem("firstName", res.contact.firstName)
+              window.location = `/view/menu/confirmation.html`
             } else {
               alert(`Erreur de commande`)
             }

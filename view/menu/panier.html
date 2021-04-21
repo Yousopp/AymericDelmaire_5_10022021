@@ -73,8 +73,8 @@
             type="text"
             name="firstName"
             id="firstName"
-            pattern="[a-zA-Z]{1,10}"
-            title="1 à 10 lettres"
+            pattern="[a-zA-Z]{1,20}"
+            title="1 à 20 lettres"
             required
           />
 
@@ -83,13 +83,20 @@
             type="text"
             name="lastName"
             id="lastName"
-            pattern="[a-zA-Z]{1,10}"
-            title="1 à 10 lettres"
+            pattern="[a-zA-Z]{1,20}"
+            title="1 à 20 lettres"
             required
           />
 
           <label for="address">Quel est votre adresse ?</label>
-          <input type="text" name="address" id="address" required />
+          <input
+            type="text"
+            name="address"
+            id="address"
+            pattern="[a-zA-Z0-9 ]{1,100}"
+            title="1 à 100 lettres"
+            required
+          />
 
           <label for="city">Quel est votre ville ?</label>
           <input

@@ -4,7 +4,8 @@
 
 function addLogoNew() {
     var logoNew = document.getElementById('logoNew')
-    if (localStorage.cart === '{}' || localStorage.length <= 1) {
+    console.log(localStorage)
+    if (localStorage.cart === '{}' || localStorage.length < 1) {
         logoNew.style.display = 'none'
     } else {
         logoNew.getElementsByClassName('appear').innerHTML = 'display: block;'

@@ -75,7 +75,9 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
                 produit.append(divProduit)
             })
     } else {/*Sinon afficher message d'erreur*/
-        console.log("ERROR")
-        document.getElementById('erreur').innerHTML = "<strong>Erreur de chargement</strong>"
+        throw new Error('Erreur de chargement !')
     }
-})
+}).catch( function(error) {
+    document.getElementById('erreur').innerHTML = "<strong>Erreur de chargement</strong>"
+    console.log(error)}
+)
